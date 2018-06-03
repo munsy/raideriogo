@@ -2,26 +2,26 @@
 Raider.io bindings written in golang.
 
 ## API To Do List
-Key Related
+**Key Related**
 - [ ] Set key
 - [ ] Remove key
 
-Endpoints
+**Endpoints**
 - [x] Definitions
 - [ ] GET requests
   - [ ] Testing
 
-Character Details
+**Character Details**
 - [x] Profile
   - [x] Objects
   - [ ] Testing
 
-Guild Details
+**Guild Details**
 - [ ] Profile
   - [ ] Objects
   - [ ] Testing
 
-Mythic Plus
+**Mythic Plus**
 - [ ] Affixes
   - [ ] Objects
   - [ ] Testing
@@ -29,7 +29,7 @@ Mythic Plus
   - [ ] Objects
   - [ ] Testing
 
-Raiding
+**Raiding**
 - [ ] Boss Rankings
   - [ ] Objects
   - [ ] Testing
