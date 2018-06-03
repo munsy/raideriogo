@@ -1,5 +1,6 @@
 package raideriogo
 
+// ViewCharacterProfileResponse defines the schema for tracking a character's generic profile info.
 type ViewCharacterProfileResponse struct {
 	Name                     string                       `json:"name"`                        // Name of character
 	Race                     string                       `json:"race"`                        // Name of character's race
@@ -21,12 +22,14 @@ type ViewCharacterProfileResponse struct {
 	MythicPlusBestRuns       []KeystoneRun                `json:"mythic_plus_best_runs"`       // optional Character's three highest scoring Mythic+ runs from current season
 }
 
+// CharacterGearSchema defines the schema for tracking a character's item level and artifact info.
 type CharacterGearSchema struct {
 	ItemLevelEquipped int `json:"item_level_equipped"` // Character's equipped item level
 	ItemLevelTotal    int `json:"item_level_total"`    // Character's total item level in bags
 	ArtifactTraits    int `json:"artifact_traits"`     // Character's artifact traits on equipped artifact weapon
 }
 
+// OverallRaidProgressionSchema defines the schema for tracking a character's overall raid progression.
 type OverallRaidProgressionSchema struct {
 	AntorusTheBurningThrone RaidProgressionSchema `json:"antorus-the-burning-throne"` // optional
 	TombOfSargeras          RaidProgressionSchema `json:"tomb-of-sargeras"`           // optional
@@ -35,17 +38,19 @@ type OverallRaidProgressionSchema struct {
 	TrialOfValor            RaidProgressionSchema `json:"trial-of-valor"`             // optional
 }
 
+// MythicPlusRoleRanksSchema defines the schema for tracking a character's mythic+ rankings by role.
 type MythicPlusRoleRanksSchema struct {
-	Overall     RanksSchema `json"overall"`
-	Tank        RanksSchema `json"tank"`
-	Healer      RanksSchema `json"healer"`
-	DPS         RanksSchema `json"dps"`
-	Class       RanksSchema `json"class"`
-	ClassTank   RanksSchema `json"class_tank"`
-	ClassHealer RanksSchema `json"class_healer"`
-	ClassDPS    RanksSchema `json"class_dps"`
+	Overall     RanksSchema `json:"overall"`
+	Tank        RanksSchema `json:"tank"`
+	Healer      RanksSchema `json:"healer"`
+	DPS         RanksSchema `json:"dps"`
+	Class       RanksSchema `json:"class"`
+	ClassTank   RanksSchema `json:"class_tank"`
+	ClassHealer RanksSchema `json:"class_healer"`
+	ClassDPS    RanksSchema `json:"class_dps"`
 }
 
+// MythicPlusScoresSchema defines the schema for tracking a character's mythic+ scores by role.
 type MythicPlusScoresSchema struct {
 	All    int `json:"all"`    // Player's best score across all possible roles
 	DPS    int `json:"dps"`    // Player's score from DPS roles
@@ -53,6 +58,7 @@ type MythicPlusScoresSchema struct {
 	Tank   int `json:"tank"`   // Player's score from tank roles
 }
 
+// KeystoneRun defines the schema for tracking a character's keystone run history.
 type KeystoneRun struct {
 	Dungeon             string `json:"dungeon"`               // Friendly name of Dungeon
 	ShortName           string `json:"short_name"`            // Shortened or abbreviated name of Dungeon
@@ -64,6 +70,7 @@ type KeystoneRun struct {
 	URL                 string `json:"url"`                   // URL to this specific run to view roster details
 }
 
+// RaidProgressionSchema defines the schema for tracking a character's raid progression.
 type RaidProgressionSchema struct {
 	Summary            string `json:"summary"`              // Human readable summary of progression
 	TotalBosses        int    `json:"total_bosses"`         // Number of bosses in instance
@@ -72,9 +79,9 @@ type RaidProgressionSchema struct {
 	MythicBossesKilled int    `json:"mythic_bosses_killed"` // Number of mythic mode bosses killed
 }
 
+// RanksSchema defines the schema for tracking a character's world, region, and realm rankings.
 type RanksSchema struct {
 	World  int `json:"world"`  // World rank
 	Region int `json:"region"` // Region rank
 	Realm  int `json:"realm"`  // Realm rank
 }
-
