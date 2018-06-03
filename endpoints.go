@@ -12,7 +12,7 @@ var (
 	endpointMythicPlus = endpointAPI + "mythic-plus/"
 	endpointRaiding    = endpointAPI + "raiding/"
 
-	// EndpointCharacter defines character endpoints
+	// EndpointCharacter defines the character endpoint.
 	EndpointCharacter = func(region, realm, name, fields string) string {
 		endpoint := endpointCharacters + "profile?region=" + region + "&realm=" + realm + "&name=" + name
 		if fields != "" {
@@ -35,21 +35,27 @@ var (
 		EndpointCharacterRaidAchievementMeta = func(region, realm, name string) string { return EndpointCharacter(region, realm, name) + "&fields=raid_achievement_meta" }
 	*/
 
-	// EndpointGuild defines guild endpoints
+	// EndpointGuild defines the guild endpoint.
 	EndpointGuild = func(region, realm, name string) string {
 		return endpointGuilds + "profile?region=" + region + "&realm=" + realm + "&name=" + name
 	}
+
+	// EndpointGuildRaidProgression defines the guild raid progression endpoint.
 	EndpointGuildRaidProgression = func(region, realm, name string) string {
 		return EndpointGuild(region, realm, name) + "&fields=raid_progression"
 	}
+
+	// EndpointGuildRaidRainkings defines the guild raid ranking endpoint.
 	EndpointGuildRaidRainkings = func(region, realm, name string) string {
 		return EndpointGuild(region, realm, name) + "&fields=raid_rankings"
 	}
 
-	// EndpointMythicPlusAffixes defines mythic+ endpoints
+	// EndpointMythicPlusAffixes defines the mythic+ affixes endpoint.
 	EndpointMythicPlusAffixes = func(region, locale string) string {
 		return endpointMythicPlus + "affixes?region=" + region + "&locale=" + locale
 	}
+
+	// EndpointMythicPlusRuns defines the mythic+ run endpoint.
 	EndpointMythicPlusRuns = func(season, region, dungeon, affixes string) string {
 		endpoint := endpointMythicPlus
 		if season != "" {
@@ -70,7 +76,7 @@ var (
 		return endpoint
 	}
 
-	// EndpointRaidingBossRankings defines raiding endpoints
+	// EndpointRaidingBossRankings defines the raiding endpoint.
 	EndpointRaidingBossRankings = func(raid, boss, difficulty, region, realm string) string {
 		endpoint := endpointRaiding + "boss-rankings?raid=" + raid + "&boss=" + boss + "&difficulty=" + difficulty + "&region=" + region
 		if realm != "" {
@@ -78,12 +84,18 @@ var (
 		}
 		return endpoint
 	}
+
+	// EndpointRaidingHallOfFame defines the raiding hall of fame endpoint.
 	EndpointRaidingHallOfFame = func(raid, difficulty, region string) string {
 		return endpointRaiding + "hall-of-fame?raid=" + raid + "&difficulty=" + difficulty + "&region=" + region
 	}
+
+	// EndpointRaidingProgression defines the raiding progression endpoint.
 	EndpointRaidingProgression = func(raid, difficulty, region string) string {
 		return endpointRaiding + "progression?raid=" + raid + "&difficulty=" + difficulty + "&region=" + region
 	}
+
+	// EndpointRaidingRaidRankings defines raid rankings endpoint.
 	EndpointRaidingRaidRankings = func(raid, boss, difficulty, region, realm string) string {
 		endpoint := endpointRaiding + "raid-rankings?raid=" + raid + "&difficulty=" + difficulty + "&region=" + region
 		if realm != "" {
