@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-type HttpClient interface {
+type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
 
