@@ -1,1 +1,4 @@
+os: linux
+dist: trusty
+group: stable
 language: go
