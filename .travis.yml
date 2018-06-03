@@ -2,7 +2,7 @@ language: go
 install:
   - go get github.com/munsy/raideriogo
   - go get -v .
-  - go gete -v github.com/golang/lint/golint
+  - go get -v github.com/golang/lint/golint
 script:
   - diff <(gofmt -d .) <(echo -n)
   - go vet -x ./...
