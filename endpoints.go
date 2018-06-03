@@ -1,7 +1,5 @@
 package raideriogo
 
-// https://raider.io/api/v1/characters/profile?region=us&realm=earthen-ring&name=munsy&fields=mythic_plus_highest_level_runs
-
 // APIVersion is the Raider.io version used for the REST and Websocket API.
 var APIVersion = "1"
 
@@ -58,7 +56,6 @@ var (
 	}
 
 	// Raiding Endpoints
-	// https://raider.io/api/v1/raiding/boss-rankings?raid=tomb-of-sargeras&boss=goroth&difficulty=mythic&region=us&realm=earthen-ring
 	EndpointRaidingBossRankings = func(raid, boss, difficulty, region, realm string) string {
 		endpoint := EndpointRaiding + "boss-rankings?raid=" + raid + "&boss=" + boss + "&difficulty=" + difficulty + "&region=" + region
 		if realm != "" {
@@ -66,9 +63,7 @@ var (
 		}
 		return endpoint
 	}
-	// https://raider.io/api/v1/raiding/hall-of-fame?raid=tomb-of-sargeras&difficulty=mythic&region=us
 	EndpointRaidingHallOfFame = func(raid, difficulty, region string) string { return EndpointRaiding + "hall-of-fame?raid=" + raid + "&difficulty=" + difficulty + "&region=" + region }
-	// https://raider.io/api/v1/raiding/progression?raid=tomb-of-sargeras&difficulty=mythic&region=us
 	EndpointRaidingProgression = func(raid, difficulty, region string) string { return EndpointRaiding + "progression?raid=" + raid + "&difficulty=" + difficulty + "&region=" + region }
 	EndpointRaidingRaidRankings = func(raid, boss, difficulty, region, realm string) string {
                 endpoint := EndpointRaiding + "raid-rankings?raid=" + raid + "&difficulty=" + difficulty + "&region=" + region
