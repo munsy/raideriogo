@@ -12,7 +12,7 @@ var (
 	EndpointMythicPlus = EndpointAPI + "mythic-plus/"
 	EndpointRaiding    = EndpointAPI + "raiding/"
 
-	// Character Endpoints
+	// EndpointCharacter defines character endpoints
 	EndpointCharacter = func(region, realm, name, fields string) string {
 		endpoint := EndpointCharacters + "profile?region=" + region + "&realm=" + realm + "&name=" + name
 		if fields != "" {
@@ -35,7 +35,7 @@ var (
 		EndpointCharacterRaidAchievementMeta = func(region, realm, name string) string { return EndpointCharacter(region, realm, name) + "&fields=raid_achievement_meta" }
 	*/
 
-	// Guild Endpoints
+	// EndpointGuild defines guild endpoints
 	EndpointGuild = func(region, realm, name string) string {
 		return EndpointGuilds + "profile?region=" + region + "&realm=" + realm + "&name=" + name
 	}
@@ -46,7 +46,7 @@ var (
 		return EndpointGuild(region, realm, name) + "&fields=raid_rankings"
 	}
 
-	// Mythic Plus Endpoints
+	// EndpointMythicPlusAffixes defines mythic+ endpoints
 	EndpointMythicPlusAffixes = func(region, locale string) string {
 		return EndpointMythicPlus + "affixes?region=" + region + "&locale=" + locale
 	}
@@ -57,21 +57,20 @@ var (
 		}
 		if region == "" && dungeon == "" && affixes == "" {
 			return endpoint
-		} else {
-			if region != "" {
-				endpoint += "&region=" + region
-			}
-			if dungeon != "" {
-				endpoint += "&dungeon=" + dungeon
-			}
-			if affixes != "" {
-				endpoint += "&affixes=" + affixes
-			}
+		}
+		if region != "" {
+			endpoint += "&region=" + region
+		}
+		if dungeon != "" {
+			endpoint += "&dungeon=" + dungeon
+		}
+		if affixes != "" {
+			endpoint += "&affixes=" + affixes
 		}
 		return endpoint
 	}
 
-	// Raiding Endpoints
+	// EndpointRaidingBossRankings defines raiding endpoints
 	EndpointRaidingBossRankings = func(raid, boss, difficulty, region, realm string) string {
 		endpoint := EndpointRaiding + "boss-rankings?raid=" + raid + "&boss=" + boss + "&difficulty=" + difficulty + "&region=" + region
 		if realm != "" {
