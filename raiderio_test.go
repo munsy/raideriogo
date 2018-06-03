@@ -9,37 +9,28 @@ type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
 
-type MockClient struct {
-	DoFunc func(req *http.Request) (*http.Response, error)
+type MockHTTPClient struct {
+	MockDo func(req *http.Request) (*http.Response, error)
 }
 
-func (m *MockClient) Do(req *http.Request) (*http.Response, error) {
-	if m.DoFunc != nil {
-		return m.DoFunc(req)
-	}
-	// just in case you want default correct return value
-	return &http.Response{}, nil
+func (m *MockHTTPClient) Do(req *http.Request) (*http.Response, error) {
+	return m.MockDo(req)
 }
 
-func TestClient(t *testing.T) {
-	client := &MockClient{
-		DoFunc: func(req *http.Request) (*http.Response, error) {
-			// do whatever you want
+// FIX THIS IT IS WORTHLESS FILTH
+func TestGet(t *testing.T) {
+	client := &MockHTTPClient{
+		MockDo: func(req *http.Request) (*http.Response, error) {
 			return &http.Response{
 				StatusCode: http.StatusBadRequest,
 			}, nil
 		},
 	}
 
-	request, _ := http.NewRequest("GET", "https://www.reallycoolurl.com/bad_request", nil)
-	// as this is a test, we may skip error handling
+	request := http.Get(EndpointCharacter("us", "thrall", "munsy", ""))
 
 	response, _ := client.Do(request)
 	if response.StatusCode != http.StatusBadRequest {
-		t.Error("invalid response status code")
+		t.Error("Invalid response status code")
 	}
-}
-
-func TestGet(t *testing.T) {
-	return
 }

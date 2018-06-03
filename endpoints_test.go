@@ -7,6 +7,7 @@ func TestEndpointCharacter(t *testing.T) {
 		"https://raider.io/api/v1/characters/profile?region=testRegion&realm=testRealm&name=testName",
 		"https://raider.io/api/v1/characters/profile?region=testRegion&realm=testRealm&name=testName&fields=gear,guild,mythic_plus_scores",
 	}
+
 	if EndpointCharacter("testRegion", "testRealm", "testName", "") != expectedURL[0] {
 		t.Fatal("String mismatch.")
 	}
