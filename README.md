@@ -8,6 +8,8 @@ Key Related
 
 Endpoints
 - [x] Definitions
+- [ ] GET requests
+  - [ ] Testing
 
 Character Details
 - [x] Profile
