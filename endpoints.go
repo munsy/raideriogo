@@ -41,9 +41,9 @@ var (
 
 	// EndpointMythicPlusRuns defines the mythic+ run endpoint.
 	EndpointMythicPlusRuns = func(season, region, dungeon, affixes string) string {
-		endpoint := endpointMythicPlus
+		endpoint := endpointMythicPlus + "runs"
 		if season != "" {
-			endpoint += "runs?season=" + season
+			endpoint += "?season=" + season
 		}
 		if region == "" && dungeon == "" && affixes == "" {
 			return endpoint
