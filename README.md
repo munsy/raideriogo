@@ -4,18 +4,6 @@
 Raider.io bindings written in golang.
 
 ## To Do List
-**Badges**
-- [x] Travis-Ci
-- [ ] CircleCI
-- [x] GoDoc
-- [x] GoReportCard
-- [ ] Coveralls.io
-- [ ] GitHub Issues via Shields.io
-- [x] License via Shields.io
-- [ ] Release via Shields.io
-- [ ] Stargazers over time
-- 
-
 **Key Related**
 - [ ] Set key
 - [ ] Remove key
@@ -56,3 +44,15 @@ Raider.io bindings written in golang.
 - [ ] Raid Rankings
   - [ ] Objects
   - [ ] Testing
+
+**Badges**
+- [x] Travis-Ci
+- [ ] CircleCI
+- [x] GoDoc
+- [x] GoReportCard
+- [ ] Coveralls.io
+- [x] GitHub Open Issues via Shields.io
+- [x] GitHub Closed Issues via Shields.io
+- [x] License via Shields.io
+- [ ] Release via Shields.io
+- [ ] Stargazers over time
