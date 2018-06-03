@@ -1,4 +1,5 @@
-# raideriogo [![Build Status](https://travis-ci.org/Munsy/raideriogo.svg?branch=master)](https://travis-ci.org/Munsy/raideriogo)  [![Documentation](https://godoc.org/github.com/munsy/raideriogo?status.svg)]  [![Go Report Card](https://goreportcard.com/badge/github.com/munsy/raideriogo)](https://goreportcard.com/report/github.com/munsy/raideriogo)  
+# raideriogo 
+[![Build Status](https://travis-ci.org/Munsy/raideriogo.svg?branch=master)](https://travis-ci.org/Munsy/raideriogo)  [![Documentation](https://godoc.org/github.com/munsy/raideriogo?status.svg)](https://godoc.org/github.com/munsy/raideriogo)  [![Go Report Card](https://goreportcard.com/badge/github.com/munsy/raideriogo)](https://goreportcard.com/report/github.com/munsy/raideriogo)  
 Raider.io bindings written in golang.
 
 ## To Do List
