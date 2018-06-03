@@ -11,7 +11,7 @@ Raider.io bindings written in golang.
 **Endpoints**
 - [x] Definitions
 - [ ] GET requests
-  - [ ] Testing
+- [ ] Testing
 
 **Character Details**
 - [x] Profile
