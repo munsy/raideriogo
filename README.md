@@ -1,5 +1,8 @@
-# raideriogo 
-[![Build Status](https://travis-ci.org/Munsy/raideriogo.svg?branch=master)](https://travis-ci.org/Munsy/raideriogo)  [![Documentation](https://godoc.org/github.com/munsy/raideriogo?status.svg)](https://godoc.org/github.com/munsy/raideriogo)  [![Go Report Card](https://goreportcard.com/badge/github.com/munsy/raideriogo)](https://goreportcard.com/report/github.com/munsy/raideriogo)  
+# raideriogo [![Build Status](https://travis-ci.org/Munsy/raideriogo.svg?branch=master)](https://travis-ci.org/Munsy/raideriogo)  [![Documentation](https://godoc.org/github.com/munsy/raideriogo?status.svg)](https://godoc.org/github.com/munsy/raideriogo)  [![Go Report Card](https://goreportcard.com/badge/github.com/munsy/raideriogo)](https://goreportcard.com/report/github.com/munsy/raideriogo)  
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)  
+[![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.com/munsy/raideriogo/issues)
+
+
 Raider.io bindings written in golang.
 
 ## To Do List
@@ -10,7 +13,7 @@ Raider.io bindings written in golang.
 - [x] GoReportCard
 - [ ] Coveralls.io
 - [ ] GitHub Issues via Shields.io
-- [ ] License via Shields.io
+- [x] License via Shields.io
 - [ ] Release via Shields.io
 - [ ] Stargazers over time
 - 
