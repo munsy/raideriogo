@@ -1,10 +1,13 @@
 language: go
 install:
-  - go get github.com/munsy/raideriogo
-  - go get -v .
-  - go get -v github.com/golang/lint/golint
+- go get github.com/munsy/raideriogo
+- go get -v .
+- go get -v github.com/golang/lint/golint
 script:
-  - diff <(gofmt -d .) <(echo -n)
-  - go vet -x ./...
-  - golint -set_exit_status ./...
-  - go test -v -race ./...
+- diff <(gofmt -d .) <(echo -n)
+- go vet -x ./...
+- golint -set_exit_status ./...
+- go test -v -race ./...
+env:
+  global:
+    secure: 3VgPS3BATgsG8/9uBGNhJ2ci4ldYgrDG0bIbWxDKSsPXyWeAK0PLsy8xI5kOBq7Tf8WOsJ5LsxRPpUvhUxDCGaaynfTVWlNhSt6wRNeqoqRdReyzQTnVxHKlCkwPjdXzOwLiKake+CCw+JY4/FuWT5lPh13l8uphaZcNdJZd0+e1VNq7Re06l144ELZ04PNKnS6l1cPJVhq5PqkEw8dCj/AJWTc/lH7y5pims9T4Cfq8CL+xgtaQOP4HTBWJDJBNJbAFmuw16x6V5JS7v/KmQ/Fb2Y3cEu5XMZBglod/HyKQYTVgqPvCNtA5ksyriOr4dr8dJdfW5WWtCZT+XAHJEgUKZVjX06RpuA/S3HnTUoPryflUdfH4ej6OuID5ncn0GQjCfcQgQlAWX4OMvUC1h3dcz77KhzIf5AhFsX7ilw04F4ainI0bRiUTpZsQOjPIgpu7sHsM0ODSpqGExp7q8w5zqOJFR8lKRIltophx2JZ0lfNL2BdOkBWIODi8Zj7wbeD8tX7MGhJBm8wjXipfZsJsLMRU3zlmVWNKFaxtFEWDI0BdhAJ2FyaCG/NUPaUOELizxYU3V5JiD/IlILkj1IoGKgQpJqBUBYiSDboMNZzzTNfzmguZRHIt0wbCgcWo5Z4uqr9BFeMNTHJOea3rMyxtzP4rCbJQcBG9T43P29I=
