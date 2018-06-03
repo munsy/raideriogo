@@ -1,11 +1,12 @@
 package raideriogo
 
-import(
+import (
 	"encoding/json"
-	"net/http"
 	"io/ioutil"
+	"net/http"
 )
 
+// Get returns an interface corresponding to the given endpoint.
 func Get(endpoint string) interface{} {
 	var v interface{}
 
