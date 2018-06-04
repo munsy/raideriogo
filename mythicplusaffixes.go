@@ -9,7 +9,7 @@ type ViewMythicPlusAffixesResponse struct {
 	AffixDetails   []IDNameDescriptionWowheadModel `json:"affix_details"`   // List of details for each active affix
 }
 
-// IdNameDescriptionWowheadModel defines the schema for mythic+ affixes via Wowhead data pulled into Raider.io.
+// IDNameDescriptionWowheadModel defines the schema for mythic+ affixes via Wowhead data pulled into Raider.io.
 type IDNameDescriptionWowheadModel struct {
 	ID          int    `json:"id"`          // Blizzard's ID for this affix
 	Name        string `json:"name"`        // Friendly name for this affix

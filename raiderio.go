@@ -10,7 +10,7 @@ import (
 type RaiderIOResponse interface {
 }
 
-// RaiderIOResponse is an empty struct.
+// RaiderIOClient is an empty struct.
 type RaiderIOClient struct {
 }
 

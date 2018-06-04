@@ -15,11 +15,11 @@ type ProgressTotalGuildsGuildsModel struct {
 // DefeatedAtGuildModel defines the schema for tracking boss defeats by guild.
 type DefeatedAtGuildModel struct {
 	DefeatedAt string                               `json:"defeatedAt"` // (string),
-	Guild      IdNameFactionLogoUrlRealmRegionModel `json:"guild"`      // (IdNameFactionLogoUrlRealmRegionModel, optional)
+	Guild      IDNameFactionLogoUrlRealmRegionModel `json:"guild"`      // (IdNameFactionLogoUrlRealmRegionModel, optional)
 }
 
-// IdNameFactionLogoUrlRealmRegionModel defines the schema for tracking the guild field in the DefeatedAtGuildModel struct.
-type IdNameFactionLogoUrlRealmRegionModel struct {
+// IDNameFactionLogoUrlRealmRegionModel defines the schema for tracking the guild field in the DefeatedAtGuildModel struct.
+type IDNameFactionLogoUrlRealmRegionModel struct {
 	ID      int                      `json:"id"`      // (integer): Internal Raider.IO ID number for this guild ,
 	Name    string                   `json:"name"`    // (string): Name of the guild ,
 	Faction string                   `json:"faction"` // (string): Faction for this guild ,

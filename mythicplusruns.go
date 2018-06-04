@@ -1,6 +1,6 @@
 package raideriogo
 
-// Dungeon defines the schema for a dungeon.
+// ViewMythicPlusRunsResponse defines the schema for mythic+ runs.
 type ViewMythicPlusRunsResponse struct {
 	Rankings       []Ranking `json:""`
 	LeaderboardURL string    `json:""`
