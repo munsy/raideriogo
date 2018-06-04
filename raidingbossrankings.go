@@ -1,13 +1,16 @@
 package raideriogo
 
+// ViewRaidingBossRankingsResponse defines the schema for tracking raid boss rankings.
+type ViewRaidingBossRankingsResponse struct {
+	BossRankings []BossRanking `json:""`
+}
+
+// Guild defines the schema for a guild.
 type Guild struct {
 }
 
+// BossRanking defines the schema for a boss ranking.
 type BossRanking struct {
-}
-
-type ViewRaidingBossRankingsResponse struct {
-	BossRankings []BossRanking `json:""`
 }
 
 /*

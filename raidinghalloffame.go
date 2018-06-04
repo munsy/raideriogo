@@ -1,5 +1,6 @@
 package raideriogo
 
+// ViewRaidingHallOfFameResponse defines the schema for tracking the hall of fame.
 type ViewRaidingHallOfFameResponse struct {
 }
 

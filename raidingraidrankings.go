@@ -1,11 +1,14 @@
 package raideriogo
 
+// EncountersDefeated defines the schema for encounters defeated.
 type EncountersDefeated struct {
 }
 
+// RaidRanking defines the schema for a raid ranking.
 type RaidRanking struct {
 }
 
+// ViewRaidingRaidRankingsResponse defines the schema for tracking raid rankings.
 type ViewRaidingRaidRankingsResponse struct {
 }
 
