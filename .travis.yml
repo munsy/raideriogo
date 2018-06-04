@@ -1,9 +1,9 @@
 language: go
 go:
-- "1.7.x"
-- "1.8.x"
-- "1.9.x"
-- "1.10.x"
+- 1.7.x
+- 1.8.x
+- 1.9.x
+- 1.10.x
 install:
 - go get github.com/munsy/raideriogo
 - go get -v .
@@ -16,7 +16,8 @@ script:
 - golint -set_exit_status ./...
 - go test -v -race ./...
 - go test -v -covermode=count -coverprofile=coverage.out
-- $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
+- "$HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken
+  $COVERALLS_TOKEN"
 env:
   global:
-    secure: 3VgPS3BATgsG8/9uBGNhJ2ci4ldYgrDG0bIbWxDKSsPXyWeAK0PLsy8xI5kOBq7Tf8WOsJ5LsxRPpUvhUxDCGaaynfTVWlNhSt6wRNeqoqRdReyzQTnVxHKlCkwPjdXzOwLiKake+CCw+JY4/FuWT5lPh13l8uphaZcNdJZd0+e1VNq7Re06l144ELZ04PNKnS6l1cPJVhq5PqkEw8dCj/AJWTc/lH7y5pims9T4Cfq8CL+xgtaQOP4HTBWJDJBNJbAFmuw16x6V5JS7v/KmQ/Fb2Y3cEu5XMZBglod/HyKQYTVgqPvCNtA5ksyriOr4dr8dJdfW5WWtCZT+XAHJEgUKZVjX06RpuA/S3HnTUoPryflUdfH4ej6OuID5ncn0GQjCfcQgQlAWX4OMvUC1h3dcz77KhzIf5AhFsX7ilw04F4ainI0bRiUTpZsQOjPIgpu7sHsM0ODSpqGExp7q8w5zqOJFR8lKRIltophx2JZ0lfNL2BdOkBWIODi8Zj7wbeD8tX7MGhJBm8wjXipfZsJsLMRU3zlmVWNKFaxtFEWDI0BdhAJ2FyaCG/NUPaUOELizxYU3V5JiD/IlILkj1IoGKgQpJqBUBYiSDboMNZzzTNfzmguZRHIt0wbCgcWo5Z4uqr9BFeMNTHJOea3rMyxtzP4rCbJQcBG9T43P29I=
+  - secure: 1tktIFg7PQj6kirX6aF8Zo5FErAhwhBWuDeqT1mtmamW+qEMCm4jB6ADiWKrOHCwpXM/kZqAPFbWk8mk8YVd5Ew8QppuEX+LWzIENhO+/j+E1E2jY1msnUAF8RpQCh+LsVKlfk+qvFlhPa58BRjHeDo1ZIFo5W0u0jEQq1N18/+joZqG90hnngEOlOmbO9vRBBXCCOIHgXwveA64n1qcdODr+PHb2mCb1Q8jO739ylGminuKAOYzmARhxYDEq4pbVAxX2CvbhmLmvyi68YKou9S2uTBDcXKozna0egFBEPa+ZRbxpqO0i60IJydG/WM5gt7JsIzoz/tXFUMUg3FfsY7dk+KszOu5H7roNjffUlOchjzaFAGj4FuHennVxmCphxMK2EHoNcGQbICcgdHsmV+Tx7GD3tT1kFWiinLR+LXxc6CHJXNx1wyWD7f0okXh754FiDq5jO+P4wm+COl6K8/QrXIMQ2NQt/pVm/H1uClhqIOfCNRwUySxjVlusj4vk2HTUxfW3QScxxrFf9+PzqLFirKRJLUhrXOZA/k6NKsjyGknXagBsHuBDJC8EafiLp9x4BUG4PTEEqZPdNlJE9xMQNqXEga4WBfY+sge27Vd37sEEA+8nDmC1EwgBnt0bd31VrPKBtK4xleFmkQRNC7hvxZivGTFOI3yZimQ7I0=
