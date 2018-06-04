@@ -1,5 +1,6 @@
 package raideriogo
 
+// ViewGuildProfileResponse defines the schema for tracking a guild's generic profile info.
 type ViewGuildProfileResponse struct {
 	Name            string                       `json:"name"`             // Name of guild
 	Faction         string                       `json:"faction"`          // Guild's faction
@@ -10,6 +11,7 @@ type ViewGuildProfileResponse struct {
 	RaidProgression OverallRaidProgressionSchema `json:"raid_progression"` // Optional
 }
 
+// RaidRankingsSchema defines the schema for tracking raid rankings.
 type RaidRankingsSchema struct {
 	AntorusTheBurningThrone RaidDifficultyRankingsSchema `json:"antorus-the-burning-throne"` // optional
 	TombOfSargeras          RaidDifficultyRankingsSchema `json:"tomb-of-sargeras"`           // optional
@@ -18,6 +20,7 @@ type RaidRankingsSchema struct {
 	TrialOfValor            RaidDifficultyRankingsSchema `json:"trial-of-valor"`             // optional
 }
 
+// RaidDifficultyRankingsSchema defines the schema for tracking rankings by difficulty.
 type RaidDifficultyRankingsSchema struct {
 	Normal RanksSchema `json:"normal"` // optional
 	Heroic RanksSchema `json:"heroic"` // optional

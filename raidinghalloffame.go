@@ -1,122 +1,67 @@
 package raideriogo
 
+// ViewRaidingHallOfFameResponse defines the schema for a complete hall of fame response.
 type ViewRaidingHallOfFameResponse struct {
+	HallOfFame HallOfFame `json:"hallOfFame"`
 }
 
-/*
-type BossSummary struct {
-}
-
-type Guild2 struct {
-}
-
-type Guild struct {
-}
-
-type DefeatedBy struct {
-}
-
-type BossKill struct {
-}
-
-type Realm2 struct {
-}
-
-type Region2 struct {
-}
-
-type Guild3 struct {
-}
-
-type WinningGuild struct {
-}
-
+// HallOfFame defines the schema for the hall of fame.
 type HallOfFame struct {
-}
-*/
-
-/*
-public class BossSummary
-{
-    public int encounterId { get; set; }
-    public string name { get; set; }
-    public string slug { get; set; }
-    public int ordinal { get; set; }
-    public int wingId { get; set; }
-    public string iconUrl { get; set; }
+	BossKills     BossKills     `json:"bossKills"`
+	WinningGuilds WinningGuilds `json:"winningGuilds"`
 }
 
-public class Guild
-{
-    public int id { get; set; }
-    public string name { get; set; }
-    public string faction { get; set; }
-    public string logoUrl { get; set; }
-    public Realm realm { get; set; }
-    public Region region { get; set; }
+// BossSummary defines the schema for a boss summary.
+type BossSummary struct {
+	EncounterID int    `json:"encounterId"`
+	Name        string `json:"name"`
+	Slug        string `json:"slug"`
+	Ordinal     int    `json:"ordinal"`
+	WingID      int    `json:"wingId"`
+	IconURL     string `json:"iconUrl"`
 }
 
-public class Guild2
-{
-    public Guild2 guild { get; set; }
-    public string defeatedAt { get; set; }
+// DefeatedBy defines the schema for the guilds that have defeated a given boss.
+type DefeatedBy struct {
+	TotalCount int    `json:"totalCount"`
+	Guilds     Guilds `json:"guilds"`
 }
 
-public class DefeatedBy
-{
-    public int totalCount { get; set; }
-    public List<Guild> guilds { get; set; }
+// Realm defines the schema for a realm.
+type Realm struct {
+	ID          int    `json:"id"`
+	Name        string `json:"name"`
+	Slug        string `json:"slug"`
+	AltSlug     string `json:"altSlug"`
+	Locale      string `json:"locale"`
+	IsConnected bool   `json:"isConnected"`
 }
 
-public class BossKill
-{
-    public string boss { get; set; }
-    public BossSummary bossSummary { get; set; }
-    public DefeatedBy defeatedBy { get; set; }
+// GuildDefeat defines the schema for a boss defeat by a guild.
+type GuildDefeat struct {
+	Guild      Guild  `json:"guild"`
+	DefeatedAt string `json:"defeatedAt"`
 }
 
-public class Realm2
-{
-    public int id { get; set; }
-    public string name { get; set; }
-    public string slug { get; set; }
-    public string altSlug { get; set; }
-    public string locale { get; set; }
-    public bool isConnected { get; set; }
+// WinningGuild defines the schema for a winning guild.
+type WinningGuild struct {
+	Rank               int           `json:"rank"`
+	Guild              Guild         `json:"guild"`
+	EncountersDefeated []interface{} `json:"encountersDefeated"`
 }
 
-public class Region2
-{
-    public string name { get; set; }
-    public string slug { get; set; }
-    public string short_name { get; set; }
+// BossKill defines the schema for a boss kill.
+type BossKill struct {
+	Boss        string      `json:"boss"`
+	BossSummary BossSummary `json:"bossSummary"`
+	DefeatedBy  DefeatedBy  `json:"defeatedBy"`
 }
 
-public class Guild3
-{
-    public int id { get; set; }
-    public string name { get; set; }
-    public string faction { get; set; }
-    public string logoUrl { get; set; }
-    public Realm2 realm { get; set; }
-    public Region2 region { get; set; }
-}
+// Guilds is a type definition for an array of GuildDefeat structs.
+type Guilds []GuildDefeat
 
-public class WinningGuild
-{
-    public int rank { get; set; }
-    public Guild3 guild { get; set; }
-    public List<object> encountersDefeated { get; set; }
-}
+// WinningGuilds is a type definition for an array of WinningGuild structs.
+type WinningGuilds []WinningGuild
 
-public class HallOfFame
-{
-    public List<BossKill> bossKills { get; set; }
-    public List<WinningGuild> winningGuilds { get; set; }
-}
-
-public class ViewRaidingHallOfFameResponse
-{
-    public HallOfFame hallOfFame { get; set; }
-}
-*/
+// BossKills is a type definition for an array of BossKill structs.
+type BossKills []BossKill

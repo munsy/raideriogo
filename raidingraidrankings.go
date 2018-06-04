@@ -1,32 +1,29 @@
 package raideriogo
 
-type EncountersDefeated struct {
-}
+import "time"
 
-type RaidRanking struct {
-}
-
+// ViewRaidingRaidRankingsResponse defines the schema for tracking raid rankings.
 type ViewRaidingRaidRankingsResponse struct {
+	RaidRankings RaidRankings `json:"raidRankings"`
 }
 
-/*
-public class EncountersDefeated
-{
-    public string slug { get; set; }
-    public DateTime lastDefeated { get; set; }
-    public DateTime firstDefeated { get; set; }
+// EncounterDefeated defines the schema for encounters defeated.
+type EncounterDefeated struct {
+	Slug          string    `json:"slug"`
+	LastDefeated  time.Time `json:"lastDefeated"`
+	FirstDefeated time.Time `json:"firstDefeated"`
 }
 
-public class RaidRanking
-{
-    public int rank { get; set; }
-    public int regionRank { get; set; }
-    public Guild guild { get; set; }
-    public List<EncountersDefeated> encountersDefeated { get; set; }
+// EncountersDefeated defines the schema for encounters defeated.
+type EncountersDefeated []EncounterDefeated
+
+// RaidRanking defines the schema for a raid ranking.
+type RaidRanking struct {
+	Rank               int                `json:"rank"`
+	RegionRank         int                `json:"regionRank"`
+	Guild              Guild              `json:"guild"`
+	EncountersDefeated EncountersDefeated `json:"encountersDefeated"`
 }
 
-public class RootObject
-{
-    public List<RaidRanking> raidRankings { get; set; }
-}
-*/
+// RaidRankings defines the schema for raid rankings.
+type RaidRankings []RaidRanking
