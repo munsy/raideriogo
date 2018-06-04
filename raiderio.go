@@ -13,10 +13,16 @@ func New() *RaiderIOClient {
 	return &RaiderIOClient{}
 }
 
-func (rio *RaiderIOClient) GetCharacterProfile(region, realm, name, fields string) error {
+func (rio *RaiderIOClient) GetCharacterProfile(region, realm, name, fields string) (*ViewCharacterProfileResponse, error) {
 	var characterProfile *ViewCharacterProfileResponse
 
-	return get(EndpointCharacter(region, realm, name, fields), characterProfile)
+	err := get(EndpointCharacter(region, realm, name, fields), characterProfile)
+
+	if nil != err {
+		return nil, err
+	}
+
+	return characterProfile, nil
 }
 
 /*
