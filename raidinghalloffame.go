@@ -1,14 +1,81 @@
 package raideriogo
 
+/*
+//ViewRaidingHallOfFameResponse defines the schema for tracking the hall of fame.
+type ViewRaidingHallOfFameResponse struct {
+}
+*/
+
 // ViewRaidingHallOfFameResponse defines the schema for tracking the hall of fame.
 type ViewRaidingHallOfFameResponse struct {
+	HallOfFame struct {
+		BossKills []struct {
+			Boss        string `json:"boss"`
+			BossSummary struct {
+				EncounterID int    `json:"encounterId"`
+				Name        string `json:"name"`
+				Slug        string `json:"slug"`
+				Ordinal     int    `json:"ordinal"`
+				WingID      int    `json:"wingId"`
+				IconURL     string `json:"iconUrl"`
+			} `json:"bossSummary"`
+			DefeatedBy struct {
+				TotalCount int `json:"totalCount"`
+				Guilds     []struct {
+					Guild struct {
+						ID      int    `json:"id"`
+						Name    string `json:"name"`
+						Faction string `json:"faction"`
+						LogoURL string `json:"logoUrl"`
+						Realm   struct {
+							ID          int    `json:"id"`
+							Name        string `json:"name"`
+							Slug        string `json:"slug"`
+							AltSlug     string `json:"altSlug"`
+							Locale      string `json:"locale"`
+							IsConnected bool   `json:"isConnected"`
+						} `json:"realm"`
+						Region struct {
+							Name      string `json:"name"`
+							Slug      string `json:"slug"`
+							ShortName string `json:"short_name"`
+						} `json:"region"`
+					} `json:"guild"`
+					DefeatedAt string `json:"defeatedAt"`
+				} `json:"guilds"`
+			} `json:"defeatedBy"`
+		} `json:"bossKills"`
+		WinningGuilds []struct {
+			Rank  int `json:"rank"`
+			Guild struct {
+				ID      int    `json:"id"`
+				Name    string `json:"name"`
+				Faction string `json:"faction"`
+				LogoURL string `json:"logoUrl"`
+				Realm   struct {
+					ID          int    `json:"id"`
+					Name        string `json:"name"`
+					Slug        string `json:"slug"`
+					AltSlug     string `json:"altSlug"`
+					Locale      string `json:"locale"`
+					IsConnected bool   `json:"isConnected"`
+				} `json:"realm"`
+				Region struct {
+					Name      string `json:"name"`
+					Slug      string `json:"slug"`
+					ShortName string `json:"short_name"`
+				} `json:"region"`
+			} `json:"guild"`
+			EncountersDefeated []interface{} `json:"encountersDefeated"`
+		} `json:"winningGuilds"`
+	} `json:"hallOfFame"`
 }
 
 /*
 type BossSummary struct {
 }
 
-type Guild2 struct {
+type GuildDefeats struct {
 }
 
 type Guild struct {
@@ -57,9 +124,9 @@ public class Guild
     public Region region { get; set; }
 }
 
-public class Guild2
+public class GuildDefeats
 {
-    public Guild2 guild { get; set; }
+    public Guild guild { get; set; }
     public string defeatedAt { get; set; }
 }
 
