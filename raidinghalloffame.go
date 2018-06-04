@@ -1,11 +1,5 @@
 package raideriogo
 
-/*
-//ViewRaidingHallOfFameResponse defines the schema for tracking the hall of fame.
-type ViewRaidingHallOfFameResponse struct {
-}
-*/
-
 // ViewRaidingHallOfFameResponse defines the schema for tracking the hall of fame.
 type ViewRaidingHallOfFameResponse struct {
 	HallOfFame struct {
