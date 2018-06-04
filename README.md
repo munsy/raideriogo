@@ -10,34 +10,34 @@ Raider.io bindings written in golang.
 
 **Character Details**
 - [ ] Profile
-  - [x] Objects
+  - [x] Schema
   - [ ] Testing
 
 **Guild Details**
 - [ ] Profile
-  - [x] Objects
+  - [x] Schema
   - [ ] Testing
 
 **Mythic Plus**
 - [ ] Affixes
-  - [x] Objects
+  - [x] Schema
   - [ ] Testing
 - [ ] Runs
-  - [x] Objects
+  - [x] Schema
   - [ ] Testing
 
 **Raiding**
 - [ ] Boss Rankings
-  - [x] Objects
+  - [x] Schema
   - [ ] Testing
 - [ ] Hall of Fame
-  - [ ] Objects
+  - [x] Schema
   - [ ] Testing
 - [ ] Progression
-  - [x] Objects
+  - [x] Schema
   - [ ] Testing
 - [ ] Raid Rankings
-  - [ ] Objects
+  - [x] Schema
   - [ ] Testing
 
 **Badges**
