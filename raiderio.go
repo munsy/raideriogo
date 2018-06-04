@@ -6,6 +6,9 @@ import (
 	"net/http"
 )
 
+type RaiderIOResponse interface {
+}
+
 type RaiderIOClient struct {
 }
 
@@ -14,7 +17,7 @@ func New() *RaiderIOClient {
 }
 
 func (rio *RaiderIOClient) GetCharacterProfile(region, realm, name, fields string) (*ViewCharacterProfileResponse, error) {
-	var characterProfile *ViewCharacterProfileResponse
+	var characterProfile *ViewCharacterProfileResponse = &ViewCharacterProfileResponse{}
 
 	err := get(EndpointCharacter(region, realm, name, fields), characterProfile)
 
@@ -98,17 +101,17 @@ func (rio *RaiderIOClient) GetRaidingRaidRankings(raid, difficulty, region, real
 */
 
 // Returns an interface corresponding to the given endpoint.
-func get(endpoint string, v interface{}) error {
-	response, err := http.Get(endpoint)
+func get(endpoint string, raiderResponse RaiderIOResponse) error {
+	httpResponse, err := http.Get(endpoint)
 	if nil != err {
 		return err
 	}
-	defer response.Body.Close()
+	defer httpResponse.Body.Close()
 
-	data, err := ioutil.ReadAll(response.Body)
+	data, err := ioutil.ReadAll(httpResponse.Body)
 	if nil != err {
 		return err
 	}
 
-	return json.Unmarshal(data, &v)
+	return json.Unmarshal(data, &raiderResponse)
 }
