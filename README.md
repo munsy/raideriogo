@@ -37,7 +37,7 @@ Raider.io bindings written in golang.
   - [x] Objects
   - [ ] Testing
 - [ ] Raid Rankings
-  - [x] Objects
+  - [ ] Objects
   - [ ] Testing
 
 **Badges**
