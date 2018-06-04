@@ -9,25 +9,25 @@ Raider.io bindings written in golang.
 
 **Endpoints**
 - [x] Definitions
-- [ ] GET requests
+- [x] GET requests
 - [ ] Testing
 
 **Character Details**
-- [x] Profile
+- [ ] Profile
   - [x] Objects
   - [ ] Testing
 
 **Guild Details**
 - [ ] Profile
-  - [ ] Objects
+  - [x] Objects
   - [ ] Testing
 
 **Mythic Plus**
 - [ ] Affixes
-  - [ ] Objects
+  - [x] Objects
   - [ ] Testing
 - [ ] Runs
-  - [ ] Objects
+  - [x] Objects
   - [ ] Testing
 
 **Raiding**
@@ -38,7 +38,7 @@ Raider.io bindings written in golang.
   - [ ] Objects
   - [ ] Testing
 - [ ] Progression
-  - [ ] Objects
+  - [x] Objects
   - [ ] Testing
 - [ ] Raid Rankings
   - [ ] Objects
@@ -55,3 +55,6 @@ Raider.io bindings written in golang.
 - [x] License via Shields.io
 - [ ] Release via Shields.io
 - [ ] Stargazers over time
+
+## Disclaimer
+I am in no way associated with the fine folks over at https://www.raider.io other than being a fan of their work and wanting to use it with my own stuff.
