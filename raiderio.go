@@ -21,7 +21,7 @@ func New() *RaiderIOClient {
 
 // GetCharacterProfile creates a new ViewCharacterProfileResponse by calling the Raider.io API.
 func (rio *RaiderIOClient) GetCharacterProfile(region, realm, name, fields string) (*ViewCharacterProfileResponse, error) {
-	var characterProfile *ViewCharacterProfileResponse = &ViewCharacterProfileResponse{}
+	var characterProfile = &ViewCharacterProfileResponse{}
 
 	err := get(EndpointCharacter(region, realm, name, fields), characterProfile)
 
@@ -34,7 +34,7 @@ func (rio *RaiderIOClient) GetCharacterProfile(region, realm, name, fields strin
 
 // GetGuildProfile creates a new ViewGuildProfileResponse by calling the Raider.io API.
 func (rio *RaiderIOClient) GetGuildProfile(region, realm, name, fields string) (*ViewGuildProfileResponse, error) {
-	var guildProfile *ViewGuildProfileResponse = &ViewGuildProfileResponse{}
+	var guildProfile = &ViewGuildProfileResponse{}
 
 	err := get(EndpointGuild(region, realm, name, fields), guildProfile)
 
@@ -47,7 +47,7 @@ func (rio *RaiderIOClient) GetGuildProfile(region, realm, name, fields string) (
 
 // GetMythicPlusAffixes creates a new ViewMythicPlusAffixesResponse by calling the Raider.io API.
 func (rio *RaiderIOClient) GetMythicPlusAffixes(region, locale string) (*ViewMythicPlusAffixesResponse, error) {
-	var affixes *ViewMythicPlusAffixesResponse = &ViewMythicPlusAffixesResponse{}
+	var affixes = &ViewMythicPlusAffixesResponse{}
 
 	err := get(EndpointMythicPlusAffixes(region, locale), affixes)
 
@@ -60,7 +60,7 @@ func (rio *RaiderIOClient) GetMythicPlusAffixes(region, locale string) (*ViewMyt
 
 // GetMythicPlusRuns creates a new ViewMythicPlusRunsResponse by calling the Raider.io API.
 func (rio *RaiderIOClient) GetMythicPlusRuns(season, region, dungeon, affixes string) (*ViewMythicPlusRunsResponse, error) {
-	var runs *ViewMythicPlusRunsResponse = &ViewMythicPlusRunsResponse{}
+	var runs = &ViewMythicPlusRunsResponse{}
 
 	err := get(EndpointMythicPlusRuns(season, region, dungeon, affixes), runs)
 
@@ -73,7 +73,7 @@ func (rio *RaiderIOClient) GetMythicPlusRuns(season, region, dungeon, affixes st
 
 // GetRaidingBossRankings creates a new ViewRaidingBossRankingsResponse by calling the Raider.io API.
 func (rio *RaiderIOClient) GetRaidingBossRankings(raid, boss, difficulty, region, realm string) (*ViewRaidingBossRankingsResponse, error) {
-	var bossRankings *ViewRaidingBossRankingsResponse = &ViewRaidingBossRankingsResponse{}
+	var bossRankings = &ViewRaidingBossRankingsResponse{}
 
 	err := get(EndpointRaidingBossRankings(raid, boss, difficulty, region, realm), bossRankings)
 
@@ -86,7 +86,7 @@ func (rio *RaiderIOClient) GetRaidingBossRankings(raid, boss, difficulty, region
 
 // GetRaidingHallOfFame creates a new ViewRaidingHallOfFameResponse by calling the Raider.io API.
 func (rio *RaiderIOClient) GetRaidingHallOfFame(raid, difficulty, region string) (*ViewRaidingHallOfFameResponse, error) {
-	var hallOfFame *ViewRaidingHallOfFameResponse = &ViewRaidingHallOfFameResponse{}
+	var hallOfFame = &ViewRaidingHallOfFameResponse{}
 
 	err := get(EndpointRaidingHallOfFame(raid, difficulty, region), hallOfFame)
 
@@ -99,7 +99,7 @@ func (rio *RaiderIOClient) GetRaidingHallOfFame(raid, difficulty, region string)
 
 // GetRaidingProgression creates a new ViewRaidingProgressionResponse by calling the Raider.io API.
 func (rio *RaiderIOClient) GetRaidingProgression(raid, difficulty, region string) (*ViewRaidingProgressionResponse, error) {
-	var progression *ViewRaidingProgressionResponse = &ViewRaidingProgressionResponse{}
+	var progression = &ViewRaidingProgressionResponse{}
 
 	err := get(EndpointRaidingProgression(raid, difficulty, region), progression)
 
@@ -112,7 +112,7 @@ func (rio *RaiderIOClient) GetRaidingProgression(raid, difficulty, region string
 
 // GetRaidingRaidRankings creates a new ViewRaidingRaidRankingsResponse by calling the Raider.io API.
 func (rio *RaiderIOClient) GetRaidingRaidRankings(raid, difficulty, region, realm string) (*ViewRaidingRaidRankingsResponse, error) {
-	var rankings *ViewRaidingRaidRankingsResponse = &ViewRaidingRaidRankingsResponse{}
+	var rankings = &ViewRaidingRaidRankingsResponse{}
 
 	err := get(EndpointRaidingRaidRankings(raid, difficulty, region, realm), rankings)
 
