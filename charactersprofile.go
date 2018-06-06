@@ -2,16 +2,19 @@ package raideriogo
 
 // ViewCharacterProfileResponse defines the schema for tracking a character's generic profile info.
 type ViewCharacterProfileResponse struct {
-	Name                     string                       `json:"name"`                        // Name of character
-	Race                     string                       `json:"race"`                        // Name of character's race
-	Class                    string                       `json:"class"`                       // Name of character's class
-	ActiveSpecName           string                       `json:"active_spec_name"`            // Name of character's active spec
-	ActiveSpecRole           string                       `json:"active_spec_role"`            // Name of the role for character's active spec
-	Gender                   string                       `json:"gender"`                      // Character's gender
-	Faction                  string                       `json:"faction"`                     // Character's faction
-	Region                   string                       `json:"region"`                      // Region character belongs to
-	Realm                    string                       `json:"realm"`                       // Realm character resides on
-	ProfileURL               string                       `json:"profile_url"`                 // URL for Character's profile on Raider.IO
+	Name                     string                       `json:"name"`
+	Race                     string                       `json:"race"`
+	Class                    string                       `json:"class"`
+	ActiveSpecName           string                       `json:"active_spec_name"`
+	ActiveSpecRole           string                       `json:"active_spec_role"`
+	Gender                   string                       `json:"gender"`
+	Faction                  string                       `json:"faction"`
+	AchievementPoints        int                          `json:"achievement_points"`
+	HonorableKills           int                          `json:"honorable_kills"`
+	ThumbnailURL             string                       `json:"thumbnail_url"`
+	Region                   string                       `json:"region"`
+	Realm                    string                       `json:"realm"`
+	ProfileURL               string                       `json:"profile_url"`
 	Gear                     CharacterGearSchema          `json:"gear"`                        // optional
 	RaidProgression          OverallRaidProgressionSchema `json:"raid_progression"`            // optional
 	MythicPlusRanks          MythicPlusRoleRanksSchema    `json:"mythic_plus_ranks"`           // optional

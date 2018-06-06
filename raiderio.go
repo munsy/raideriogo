@@ -4,26 +4,34 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"time"
 )
 
 // RaiderIOResponse is an empty interface.
 type RaiderIOResponse interface {
 }
 
-// RaiderIOClient is an empty struct.
+// RaiderIOClient retrieves data from the Raider.io API.
 type RaiderIOClient struct {
+	client *http.Client
 }
 
 // New creates a new RaiderIOClient.
 func New() *RaiderIOClient {
-	return &RaiderIOClient{}
+	r := &RaiderIOClient{
+		&http.Client{
+			Timeout: time.Second * 10,
+		},
+	}
+
+	return r
 }
 
 // GetCharacterProfile creates a new ViewCharacterProfileResponse by calling the Raider.io API.
 func (rio *RaiderIOClient) GetCharacterProfile(region, realm, name, fields string) (*ViewCharacterProfileResponse, error) {
 	var characterProfile = &ViewCharacterProfileResponse{}
 
-	err := get(EndpointCharacter(region, realm, name, fields), characterProfile)
+	err := rio.get(EndpointCharacter(region, realm, name, fields), characterProfile)
 
 	if nil != err {
 		return nil, err
@@ -36,7 +44,7 @@ func (rio *RaiderIOClient) GetCharacterProfile(region, realm, name, fields strin
 func (rio *RaiderIOClient) GetGuildProfile(region, realm, name, fields string) (*ViewGuildProfileResponse, error) {
 	var guildProfile = &ViewGuildProfileResponse{}
 
-	err := get(EndpointGuild(region, realm, name, fields), guildProfile)
+	err := rio.get(EndpointGuild(region, realm, name, fields), guildProfile)
 
 	if nil != err {
 		return nil, err
@@ -49,7 +57,7 @@ func (rio *RaiderIOClient) GetGuildProfile(region, realm, name, fields string) (
 func (rio *RaiderIOClient) GetMythicPlusAffixes(region, locale string) (*ViewMythicPlusAffixesResponse, error) {
 	var affixes = &ViewMythicPlusAffixesResponse{}
 
-	err := get(EndpointMythicPlusAffixes(region, locale), affixes)
+	err := rio.get(EndpointMythicPlusAffixes(region, locale), affixes)
 
 	if nil != err {
 		return nil, err
@@ -62,7 +70,7 @@ func (rio *RaiderIOClient) GetMythicPlusAffixes(region, locale string) (*ViewMyt
 func (rio *RaiderIOClient) GetMythicPlusRuns(season, region, dungeon, affixes string) (*ViewMythicPlusRunsResponse, error) {
 	var runs = &ViewMythicPlusRunsResponse{}
 
-	err := get(EndpointMythicPlusRuns(season, region, dungeon, affixes), runs)
+	err := rio.get(EndpointMythicPlusRuns(season, region, dungeon, affixes), runs)
 
 	if nil != err {
 		return nil, err
@@ -75,7 +83,7 @@ func (rio *RaiderIOClient) GetMythicPlusRuns(season, region, dungeon, affixes st
 func (rio *RaiderIOClient) GetRaidingBossRankings(raid, boss, difficulty, region, realm string) (*ViewRaidingBossRankingsResponse, error) {
 	var bossRankings = &ViewRaidingBossRankingsResponse{}
 
-	err := get(EndpointRaidingBossRankings(raid, boss, difficulty, region, realm), bossRankings)
+	err := rio.get(EndpointRaidingBossRankings(raid, boss, difficulty, region, realm), bossRankings)
 
 	if nil != err {
 		return nil, err
@@ -88,7 +96,7 @@ func (rio *RaiderIOClient) GetRaidingBossRankings(raid, boss, difficulty, region
 func (rio *RaiderIOClient) GetRaidingHallOfFame(raid, difficulty, region string) (*ViewRaidingHallOfFameResponse, error) {
 	var hallOfFame = &ViewRaidingHallOfFameResponse{}
 
-	err := get(EndpointRaidingHallOfFame(raid, difficulty, region), hallOfFame)
+	err := rio.get(EndpointRaidingHallOfFame(raid, difficulty, region), hallOfFame)
 
 	if nil != err {
 		return nil, err
@@ -101,7 +109,7 @@ func (rio *RaiderIOClient) GetRaidingHallOfFame(raid, difficulty, region string)
 func (rio *RaiderIOClient) GetRaidingProgression(raid, difficulty, region string) (*ViewRaidingProgressionResponse, error) {
 	var progression = &ViewRaidingProgressionResponse{}
 
-	err := get(EndpointRaidingProgression(raid, difficulty, region), progression)
+	err := rio.get(EndpointRaidingProgression(raid, difficulty, region), progression)
 
 	if nil != err {
 		return nil, err
@@ -114,7 +122,7 @@ func (rio *RaiderIOClient) GetRaidingProgression(raid, difficulty, region string
 func (rio *RaiderIOClient) GetRaidingRaidRankings(raid, difficulty, region, realm string) (*ViewRaidingRaidRankingsResponse, error) {
 	var rankings = &ViewRaidingRaidRankingsResponse{}
 
-	err := get(EndpointRaidingRaidRankings(raid, difficulty, region, realm), rankings)
+	err := rio.get(EndpointRaidingRaidRankings(raid, difficulty, region, realm), rankings)
 
 	if nil != err {
 		return nil, err
@@ -124,8 +132,9 @@ func (rio *RaiderIOClient) GetRaidingRaidRankings(raid, difficulty, region, real
 }
 
 // Returns an interface corresponding to the given endpoint.
-func get(endpoint string, raiderResponse RaiderIOResponse) error {
-	httpResponse, err := http.Get(endpoint)
+func (rio *RaiderIOClient) get(endpoint string, raiderResponse RaiderIOResponse) error {
+	httpResponse, err := rio.client.Get(endpoint)
+
 	if nil != err {
 		return err
 	}
