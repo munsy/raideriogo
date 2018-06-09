@@ -7,14 +7,17 @@ Raider.io bindings written in golang.
 **Endpoints**
 - [x] Definitions
 - [x] Testing
+
 **Character Details**
 - [x] Profile
   - [x] Schema
   - [x] Testing
+
 **Guild Details**
 - [x] Profile
   - [x] Schema
   - [x] Testing
+
 **Mythic Plus**
 - [x] Affixes
   - [x] Schema
@@ -22,6 +25,7 @@ Raider.io bindings written in golang.
 - [ ] Runs
   - [x] Schema
   - [ ] Testing
+  
 **Raiding**
 - [ ] Boss Rankings
   - [x] Schema
