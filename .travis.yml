@@ -5,6 +5,7 @@ go:
   - 1.10.x
 install:
   - go get github.com/munsy/raideriogo
+  - go get github.com/go-test/deep
   - go get -v .
   - go get -v github.com/golang/lint/golint
   - go get golang.org/x/tools/cmd/cover
