@@ -8,17 +8,17 @@ Raider.io bindings written in golang.
 - [x] Definitions
 - [x] Testing
 **Character Details**
-- [ ] Profile
+- [x] Profile
   - [x] Schema
-  - [ ] Testing
+  - [x] Testing
 **Guild Details**
-- [ ] Profile
+- [x] Profile
   - [x] Schema
-  - [ ] Testing
+  - [x] Testing
 **Mythic Plus**
-- [ ] Affixes
+- [x] Affixes
   - [x] Schema
-  - [ ] Testing
+  - [x] Testing
 - [ ] Runs
   - [x] Schema
   - [ ] Testing
