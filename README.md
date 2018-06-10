@@ -3,6 +3,29 @@
 
 Raider.io bindings written in golang.
 
+## A Very Simple Example
+```
+package main
+
+import(
+        "fmt"
+
+        "github.com/munsy/raideriogo"
+)
+
+func main() {
+        client := raideriogo.New()
+
+        character, err := client.GetCharacterProfile("us", "thrall", "munsy", "")
+
+        if nil != err {
+                panic(err)
+        }
+
+        fmt.Printf("Name: %v\nClass: %v\nRace: %v\n", character.Name, character.Class, character.Race)
+}
+```
+
 ## To Do List
 **Endpoints**
 - [x] Definitions
