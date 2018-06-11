@@ -25,6 +25,13 @@ func main() {
         fmt.Printf("Name: %v\nClass: %v\nRace: %v\n", character.Name, character.Class, character.Race)
 }
 ```
+```
+munsy@azeroth:~$ ./raideriotest
+Name: Munsy
+Class: Druid
+Race: Troll
+```
+
 
 ## To Do List
 **Endpoints**
