@@ -5,6 +5,10 @@ Raider.io bindings written in golang.
 
 ## A Very Simple Example
 ```
+$ go get github.com/munsy/raideriogo
+```
+
+```
 package main
 
 import(
