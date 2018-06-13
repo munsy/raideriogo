@@ -55,10 +55,10 @@ type MythicPlusRoleRanksSchema struct {
 
 // MythicPlusScoresSchema defines the schema for tracking a character's mythic+ scores by role.
 type MythicPlusScoresSchema struct {
-	All    int `json:"all"`    // Player's best score across all possible roles
-	DPS    int `json:"dps"`    // Player's score from DPS roles
-	Healer int `json:"healer"` // Player's score from healer roles
-	Tank   int `json:"tank"`   // Player's score from tank roles
+	All    float64 `json:"all"`    // Player's best score across all possible roles
+	DPS    float64 `json:"dps"`    // Player's score from DPS roles
+	Healer float64 `json:"healer"` // Player's score from healer roles
+	Tank   float64 `json:"tank"`   // Player's score from tank roles
 }
 
 // KeystoneRun defines the schema for tracking a character's keystone run history.
