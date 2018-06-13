@@ -7,7 +7,6 @@ Raider.io bindings written in golang.
 ```
 $ go get github.com/munsy/raideriogo
 ```
-
 ```
 package main
 
@@ -30,49 +29,12 @@ func main() {
 }
 ```
 ```
-munsy@azeroth:~$ ./raideriotest
+$ go build
+$ ./raideriotest
 Name: Munsy
 Class: Druid
 Race: Troll
 ```
-
-
-## To Do List
-**Endpoints**
-- [x] Definitions
-- [x] Testing
-
-**Character Details**
-- [x] Profile
-  - [x] Schema
-  - [x] Testing
-
-**Guild Details**
-- [x] Profile
-  - [x] Schema
-  - [x] Testing
-
-**Mythic Plus**
-- [x] Affixes
-  - [x] Schema
-  - [x] Testing
-- [ ] Runs
-  - [x] Schema
-  - [ ] Testing
-  
-**Raiding**
-- [ ] Boss Rankings
-  - [x] Schema
-  - [ ] Testing
-- [ ] Hall of Fame
-  - [x] Schema
-  - [ ] Testing
-- [ ] Progression
-  - [x] Schema
-  - [ ] Testing
-- [ ] Raid Rankings
-  - [x] Schema
-  - [ ] Testing
 
 ## Disclaimer
 I am in no way associated with the fine folks over at https://www.raider.io other than being a fan of their work and wanting to use it with my own stuff.

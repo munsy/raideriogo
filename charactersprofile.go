@@ -18,7 +18,7 @@ type ViewCharacterProfileResponse struct {
 	Gear                     CharacterGearSchema          `json:"gear"`                        // optional
 	RaidProgression          OverallRaidProgressionSchema `json:"raid_progression"`            // optional
 	MythicPlusRanks          MythicPlusRoleRanksSchema    `json:"mythic_plus_ranks"`           // optional
-	MythicPlusScore          MythicPlusScoresSchema       `json:"mythic_plus_scores"`          // optional
+	MythicPlusScores         MythicPlusScoresSchema       `json:"mythic_plus_scores"`          // optional
 	PreviousMythicPlusRanks  MythicPlusRoleRanksSchema    `json:"previous_mythic_plus_ranks"`  // optional
 	PreviousMythicPlusScores MythicPlusScoresSchema       `json:"previous_mythic_plus_scores"` // optional
 	MythicPlusRecentRuns     []KeystoneRun                `json:"mythic_plus_recent_runs"`     // optional Character's three most recent Mythic+ runs from current season
