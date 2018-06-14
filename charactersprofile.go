@@ -63,14 +63,14 @@ type MythicPlusScoresSchema struct {
 
 // KeystoneRun defines the schema for tracking a character's keystone run history.
 type KeystoneRun struct {
-	Dungeon             string `json:"dungeon"`               // Friendly name of Dungeon
-	ShortName           string `json:"short_name"`            // Shortened or abbreviated name of Dungeon
-	MythicLevel         int    `json:"mythic_level"`          // Mythic+ Level of the run
-	CompletedAt         string `json:"completed_at"`          // When this run was completed
-	ClearTimeMs         int    `json:"clear_time_ms"`         // How long it took to complete the dungeon, in milliseconds
-	NumKeystoneUpgrades int    `json:"num_keystone_upgrades"` // How many times the keystone used for this dungeon would have been upgraded after completion
-	Score               int    `json:"score"`                 // How many points this run was worth
-	URL                 string `json:"url"`                   // URL to this specific run to view roster details
+	Dungeon             string  `json:"dungeon"`               // Friendly name of Dungeon
+	ShortName           string  `json:"short_name"`            // Shortened or abbreviated name of Dungeon
+	MythicLevel         int     `json:"mythic_level"`          // Mythic+ Level of the run
+	CompletedAt         string  `json:"completed_at"`          // When this run was completed
+	ClearTimeMs         int     `json:"clear_time_ms"`         // How long it took to complete the dungeon, in milliseconds
+	NumKeystoneUpgrades int     `json:"num_keystone_upgrades"` // How many times the keystone used for this dungeon would have been upgraded after completion
+	Score               float64 `json:"score"`                 // How many points this run was worth
+	URL                 string  `json:"url"`                   // URL to this specific run to view roster details
 }
 
 // RaidProgressionSchema defines the schema for tracking a character's raid progression.
