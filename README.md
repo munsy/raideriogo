@@ -1,12 +1,14 @@
 # raideriogo 
-[![Build Status](https://travis-ci.org/Munsy/raideriogo.svg?branch=master)](https://travis-ci.org/Munsy/raideriogo)  [![Documentation](https://godoc.org/github.com/munsy/raideriogo?status.svg)](https://godoc.org/github.com/munsy/raideriogo)  [![Go Report Card](https://goreportcard.com/badge/github.com/munsy/raideriogo)](https://goreportcard.com/report/github.com/munsy/raideriogo)  [![Coverage Status](https://coveralls.io/repos/github/Munsy/raideriogo/badge.svg?branch=master)](https://coveralls.io/github/Munsy/raideriogo?branch=master)  [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)  [![GitHub issues open](https://img.shields.io/github/issues/munsy/raideriogo.svg?maxAge=2592000)](https://github.com/munsy/raideriogo/issues)  [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/munsy/raideriogo.svg?maxAge=2592000)](https://github.com/munsy/raideriogo/issues)
+[![Build Status](https://travis-ci.org/Munsy/raideriogo.svg?branch=master)](https://travis-ci.org/Munsy/raideriogo)  [![Documentation](https://godoc.org/github.com/munsy/raideriogo?status.svg)](https://godoc.org/github.com/munsy/raideriogo)  [![Go Report Card](https://goreportcard.com/badge/github.com/munsy/raideriogo)](https://goreportcard.com/report/github.com/munsy/raideriogo)  [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)  
 
 Raider.io bindings written in golang.
 
-## A Very Simple Example
+## Install
 ```
 $ go get github.com/munsy/raideriogo
 ```
+
+## A Very Simple Example
 ```
 package main
 
