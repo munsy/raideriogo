@@ -17,8 +17,8 @@ type Guild struct {
 
 // BossRanking defines the schema for a boss ranking.
 type BossRanking struct {
-	Rank               int                  `json:"rank"`
-	RegionRank         int                  `json:"regionRank"`
-	Guild              Guild                `json:"guild"`
-	EncountersDefeated []EncountersDefeated `json:"encountersDefeated"`
+	Rank               int                `json:"rank"`
+	RegionRank         int                `json:"regionRank"`
+	Guild              Guild              `json:"guild"`
+	EncountersDefeated EncountersDefeated `json:"encountersDefeated"`
 }
