@@ -3,6 +3,8 @@
 
 Raider.io bindings written in golang.
 
+Up-to-date as of Raider.io Public API v0.46.7
+
 ## Install
 ```
 $ go get github.com/munsy/raideriogo
